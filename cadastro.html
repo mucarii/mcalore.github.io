@@ -11,6 +11,18 @@
     <div class="container">
         <!-- Header -->
         <header>
+            <div class="tradutor">
+                <div id="google_translate_element"></div>
+                    <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                    new google.translate.TranslateElement(
+                        {pageLanguage: 'pt', includedLanguages: 'en,es,fr,it,de,ko,ru,zh-TW', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL},
+                        'google_translate_element'
+                    );
+                    }
+                    </script>
+            <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            </div>
             <h1>Educação para Todos</h1>
             <nav>
                 <ul>
@@ -53,7 +65,7 @@
         <!-- Footer -->
         <footer>
             <p>© 2024 Educação para Todos</p>
-            <p><a href="contato.html">Nosso Time</a> | <a href="contato.html">Contato</a></p>
+            <p><a href="contato.html" class="footer-color">Nosso Time</a> | <a href="contato.html" class="footer-color">Contato</a></p>
         </footer>
     </div>
 

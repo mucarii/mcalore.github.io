@@ -19,12 +19,11 @@ html, body {
 .container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 /* Main content com flex-grow para expandir quando houver conteúdo */
 .main-content {
-    flex-grow: 1;
+    flex-grow: 0;
 }
 
 /* Estilo do footer*/
@@ -35,6 +34,9 @@ footer {
     text-align: center;
 }
 
+.footer-color {
+    color: #fff;
+}
 
 /* Cores e fontes */
 
@@ -433,4 +435,7 @@ nav a {
     height: 50px;
     vertical-align: middle;
     margin-right: 5px;
+}
+.tradutor {
+    justify-items: right;
 }
