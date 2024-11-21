@@ -434,3 +434,6 @@ nav a {
     vertical-align: middle;
     margin-right: 5px;
 }
+.tradutor {
+    justify-items: right;
+}
