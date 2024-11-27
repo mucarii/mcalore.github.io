@@ -22,7 +22,7 @@ Clone o repositório:
 
 Navegue até o diretório do projeto:
 
-        cd educacao-para-todos
+        cd ods4
 
 Abra o arquivo index.html em um navegador de sua escolha.
 
@@ -38,7 +38,7 @@ Direitos reservados aos desenvolvedores.
 
 Para mais informações, entre em contato com a equipe do projeto:
 
-Murilo Calore: [GitHub](https://github.com/mucarii) | [LinkedIn](https://www.linkedin.com/in/murilo-ritto/) | Email: murilo.l.calore.r@gmail.com  
+Murilo Calore: [GitHub](https://github.com/mucarii) | [LinkedIn](https://www.linkedin.com/in/murilo_calore/) | Email: murilo.l.calore.r@gmail.com  
 Pedro Vinchi: [GitHub](https://github.com/pedrovinchi1) | [LinkedIn](https://www.linkedin.com/in/pedrovinchi) | Email: pedrovinchih9982@gmail.com  
 João Pedro Paes: [GitHub](https://github.com/joao-Paes) | [LinkedIn](https://www.linkedin.com/in/joaopedropaes/) | Email: joao.020602@alunos.utfpr.edu.br
 
