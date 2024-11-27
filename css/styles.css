@@ -34,7 +34,13 @@ footer {
     padding: 1rem;
     text-align: center;
 }
+.curriculo{
+    align-items: center;
+    display: flex;
+    justify-content: center;
 
+
+}
 
 /* Cores e fontes */
 
