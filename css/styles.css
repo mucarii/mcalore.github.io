@@ -31,15 +31,14 @@ html, body {
 footer {
     background-color: #5D3F6B;
     color: white;
-    padding: 1rem;
+    padding: 1rem 0;
+    margin: 0;
     text-align: center;
 }
 .curriculo{
     align-items: center;
     display: flex;
     justify-content: center;
-
-
 }
 
 /* Cores e fontes */
@@ -48,6 +47,8 @@ body {
     font-family: Arial, sans-serif;
     color: #5D3F6B;
     background-color: #F0F0F0;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -151,6 +152,7 @@ nav a {
     background-color: #5D3F6B;
     color: #fff;
     padding: 4rem 2rem;
+    margin-bottom: 0;
     text-align: center;
 }
 
