@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de contato com a equipe do projeto Educação para Todos.">
     <title>Contato - Educação para Todos</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
@@ -13,15 +14,6 @@
         <header>
             <div class="tradutor">
                 <div id="google_translate_element"></div>
-                    <script type="text/javascript">
-                    function googleTranslateElementInit() {
-                      new google.translate.TranslateElement(
-                        {pageLanguage: 'pt', includedLanguages: 'en,es,fr,it,de,ko,ru,zh-TW', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL},
-                        'google_translate_element'
-                      );
-                    }
-                    </script>
-            <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
             </div>
             <h1>Educação para Todos</h1>
             <nav>
@@ -36,7 +28,7 @@
         </header>
 
         <!-- Main -->
-        <div class="main-content">
+        <main class="main-content">
             <section class="contato">
                 <h2>Entre em Contato com a Equipe</h2>
                 <p>Você pode se conectar com os participantes do projeto abaixo. Se tiver dúvidas ou sugestões, fique à vontade para entrar em contato.</p>
@@ -46,9 +38,15 @@
                     <div class="participante">
                         <h3>Murilo Calore</h3>
                         <p>
-                            <a href="https://mucarii.github.io/" target="_blank"><img src="img/github-icon.png" alt="GitHub" class="icon"> GitHub</a> | 
-                            <a href="https://www.linkedin.com/in/murilo-calore/" target="_blank"><img src="img/linkedin-icon.png" alt="LinkedIn" class="icon"> LinkedIn</a> | 
-                            <a href="mailto:murilo.l.calore.r@gmail.com"><img src="img/email-icon.png" alt="Email" class="icon"> Email</a>
+                            <a href="https://mucarii.github.io/" target="_blank" class="link-externo" data-nome="Murilo Calore">
+                                <img src="assets/img/github-icon.png" alt="GitHub" class="icon"> GitHub
+                            </a> | 
+                            <a href="https://www.linkedin.com/in/murilo-calore/" target="_blank" class="link-externo" data-nome="Murilo Calore">
+                                <img src="assets/img/linkedin-icon.png" alt="LinkedIn" class="icon"> LinkedIn
+                            </a> | 
+                            <a href="mailto:murilo.l.calore.r@gmail.com" class="email-link" data-nome="Murilo Calore">
+                                <img src="assets/img/email-icon.png" alt="Email" class="icon"> Email
+                            </a>
                         </p>
                     </div>
 
@@ -56,10 +54,15 @@
                     <div class="participante">
                         <h3>Pedro Vinchi</h3>
                         <p>
-
-                            <a href="https://pedrovinchi1.github.io/CV/" target="_blank"><img src="img/github-icon.png" alt="GitHub" class="icon"> GitHub</a> | 
-                            <a href="https://www.linkedin.com/in/pedrovinchi/" target="_blank"><img src="img/linkedin-icon.png" alt="LinkedIn" class="icon"> LinkedIn</a> | 
-                            <a href="mailto:pedrovinchih9982@gmail.com"><img src="img/email-icon.png" alt="Email" class="icon"> Email</a>
+                            <a href="https://pedrovinchi1.github.io/CV/" target="_blank" class="link-externo" data-nome="Pedro Vinchi">
+                                <img src="assets/img/github-icon.png" alt="GitHub" class="icon"> GitHub
+                            </a> | 
+                            <a href="https://www.linkedin.com/in/pedrovinchi/" target="_blank" class="link-externo" data-nome="Pedro Vinchi">
+                                <img src="assets/img/linkedin-icon.png" alt="LinkedIn" class="icon"> LinkedIn
+                            </a> | 
+                            <a href="mailto:pedrovinchih9982@gmail.com" class="email-link" data-nome="Pedro Vinchi">
+                                <img src="assets/img/email-icon.png" alt="Email" class="icon"> Email
+                            </a>
                         </p>
                     </div>
 
@@ -67,23 +70,34 @@
                     <div class="participante">
                         <h3>João Pedro Paes</h3>
                         <p>
-                            <a href="https://github.com/joao-Paes/" target="_blank"><img src="img/github-icon.png" alt="GitHub" class="icon"> GitHub</a> | 
-                            <a href="https://www.linkedin.com/in/joaopedropaes/" target="_blank"><img src="img/linkedin-icon.png" alt="LinkedIn" class="icon"> LinkedIn</a> | 
-                            <a href="mailto:joao.020602@alunos.utfpr.edu.br"><img src="img/email-icon.png" alt="Email" class="icon"> Email</a>
+                            <a href="https://github.com/joao-Paes/" target="_blank" class="link-externo" data-nome="João Pedro Paes">
+                                <img src="assets/img/github-icon.png" alt="GitHub" class="icon"> GitHub
+                            </a> | 
+                            <a href="https://www.linkedin.com/in/joaopedropaes/" target="_blank" class="link-externo" data-nome="João Pedro Paes">
+                                <img src="assets/img/linkedin-icon.png" alt="LinkedIn" class="icon"> LinkedIn
+                            </a> | 
+                            <a href="mailto:joao.020602@alunos.utfpr.edu.br" class="email-link" data-nome="João Pedro Paes">
+                                <img src="assets/img/email-icon.png" alt="Email" class="icon"> Email
+                            </a>
                         </p>
                     </div>
                 </div>
             </section>
-        </div>
+        </main>
 
         <!-- Footer -->
         <footer>
             <p>© 2024 Educação para Todos</p>
             <div class="curriculo">
-            <p><a href="https://mucarii.github.io/">Murilo</a> | <a href="https://pedrovinchi1.github.io/CV/">Pedro</a></p> | <a href="https://github.com/joao-Paes/">João</a></p>
+                <p><a href="https://mucarii.github.io/">Murilo</a> | 
+                   <a href="https://pedrovinchi1.github.io/CV/">Pedro</a> | 
+                   <a href="https://github.com/joao-Paes/">João</a>
+                </p>
             </div>
         </footer>
     </div>
 
+    <!-- JavaScript -->
+    <script src="assets/js/scripts.js"></script>
 </body>
 </html>

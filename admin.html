@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cadastro para acesso a cursos do Educação para Todos">
-    <title>Cadastro - Educação para Todos</title>
+    <meta name="description" content="Área administrativa para cadastro de usuários">
+    <title>Admin - Educação para Todos</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -23,6 +23,7 @@
                     <li><a href="cursos.html">Cursos</a></li>
                     <li><a href="cadastro.html">Cadastro</a></li>
                     <li><a href="contato.html">Contato</a></li>
+                    <li><a href="admin.html">Admin</a></li>
                 </ul>
             </nav>
         </header>
@@ -30,28 +31,24 @@
         <!-- Main -->
         <main class="main-content">
             <section class="cadastro">
-                <h2>Cadastro</h2>
-                <p>Registre-se para ter acesso aos nossos cursos e ao conteúdo exclusivo do projeto "Educação para Todos".</p>
+                <h2>Cadastro de Usuários</h2>
+                <p>Registre novos usuários para ter acesso aos nossos cursos e ao conteúdo exclusivo do projeto "Educação para Todos".</p>
 
-                <form action="login.html" method="post" class="form-cadastro">
+                <form id="form-cadastro" class="form-cadastro">
                     <label for="nome">Nome Completo:</label>
                     <input type="text" id="nome" name="nome" required>
 
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
 
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone" required>
-
-                    <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required>
-                    <small id="strength-message"></small>
-
-                    <label for="confirmar-senha">Confirmar Senha:</label>
-                    <input type="password" id="confirmar-senha" name="confirmar-senha" required>
-
                     <button type="submit" class="btn">Cadastrar</button>
+                    <button type="button" id="limpar-campos" class="btn">Limpar Campos</button>
                 </form>
+
+                <h3>Usuários Cadastrados</h3>
+                <input type="text" id="pesquisa" placeholder="Pesquisar...">
+                <button type="button" id="limpar-lista" class="btn">Limpar Lista</button>
+                <ul id="lista-usuarios"></ul>
             </section>
         </main>
 
