@@ -19,23 +19,26 @@ html, body {
 .container {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Main content com flex-grow para expandir quando houver conteúdo */
 .main-content {
-    flex-grow: 0;
+    flex-grow: 1;
 }
 
 /* Estilo do footer*/
 footer {
     background-color: #5D3F6B;
     color: white;
-    padding: 1rem;
+    padding: 1rem 0;
+    margin: 0;
     text-align: center;
 }
-
-.footer-color {
-    color: #fff;
+.curriculo{
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 /* Cores e fontes */
@@ -44,6 +47,8 @@ body {
     font-family: Arial, sans-serif;
     color: #5D3F6B;
     background-color: #F0F0F0;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -147,6 +152,7 @@ nav a {
     background-color: #5D3F6B;
     color: #fff;
     padding: 4rem 2rem;
+    margin-bottom: 0;
     text-align: center;
 }
 
