@@ -57,89 +57,111 @@ document.querySelectorAll('a').forEach(anchor => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const formCadastro = document.getElementById('form-cadastro');
+// Seleção dos elementos do DOM
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('form-cadastro');
     const listaUsuarios = document.getElementById('lista-usuarios');
-    const pesquisa = document.getElementById('pesquisa');
-    const limparCamposBtn = document.getElementById('limpar-campos');
-    const limparListaBtn = document.getElementById('limpar-lista');
+    const inputPesquisa = document.getElementById('pesquisa');
+    const btnLimparCampos = document.getElementById('limpar-campos');
+    const btnLimparLista = document.getElementById('limpar-lista');
+    const inputNome = document.getElementById('nome');
+    const inputEmail = document.getElementById('email');
 
-    // Carregar usuários do Local Storage
+    // Função para carregar usuários do localStorage
     function carregarUsuarios() {
-        listaUsuarios.innerHTML = '';
         const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-        usuarios.forEach(usuario => adicionarUsuarioNaLista(usuario));
+        console.log('Usuários carregados:', usuarios);
+        atualizarListaUsuarios(usuarios);
     }
 
-    // Adicionar usuário na lista
-    function adicionarUsuarioNaLista(usuario) {
-        const li = document.createElement('li');
-        li.textContent = `${usuario.data} - ${usuario.nome} - ${usuario.email}`;
-        const excluirBtn = document.createElement('button');
-        excluirBtn.textContent = 'Excluir';
-        excluirBtn.addEventListener('click', function() {
-            excluirUsuario(usuario);
+    // Função para atualizar a lista de usuários na tela
+    function atualizarListaUsuarios(usuarios) {
+        listaUsuarios.innerHTML = '';
+
+        if (usuarios.length === 0) {
+            listaUsuarios.innerHTML = '<li>Nenhum usuário cadastrado</li>';
+            return;
+        }
+
+        usuarios.forEach((usuario, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <div class="usuario-item">
+                    <div class="usuario-info">
+                        <p><strong>Data:</strong> ${usuario.data}</p>
+                        <p><strong>Nome:</strong> ${usuario.nome}</p>
+                        <p><strong>Email:</strong> ${usuario.email}</p>
+                    </div>
+                    <button onclick="excluirUsuario(${index})" class="btn-excluir">
+                        <i class="fas fa-trash"></i> Excluir
+                    </button>
+                </div>
+            `;
+            listaUsuarios.appendChild(li);
         });
-        li.appendChild(excluirBtn);
-        listaUsuarios.appendChild(li);
     }
 
-    // Salvar usuário no Local Storage
-    function salvarUsuario(usuario) {
+    // Função para adicionar novo usuário
+    function adicionarUsuario(nome, email) {
         const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-        usuarios.push(usuario);
+        const novoUsuario = {
+            nome: nome,
+            email: email,
+            data: new Date().toLocaleString('pt-BR')
+        };
+        
+        usuarios.push(novoUsuario);
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        console.log('Usuário adicionado:', novoUsuario);
+        carregarUsuarios();
     }
 
-    // Excluir usuário do Local Storage
-    function excluirUsuario(usuario) {
-        let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-        usuarios = usuarios.filter(u => u.email !== usuario.email);
+    // Função para excluir usuário específico
+    window.excluirUsuario = function(index) {
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        usuarios.splice(index, 1);
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
         carregarUsuarios();
     }
 
-    // Limpar campos do formulário
-    function limparCampos() {
-        formCadastro.reset();
-    }
-
-    // Limpar lista de usuários
-    function limparLista() {
-        localStorage.removeItem('usuarios');
-        carregarUsuarios();
-    }
-
-    // Pesquisar usuários
-    function pesquisarUsuarios() {
-        const termo = pesquisa.value.toLowerCase();
-        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-        listaUsuarios.innerHTML = '';
-        usuarios
-            .filter(usuario => usuario.nome.toLowerCase().includes(termo) || usuario.email.toLowerCase().includes(termo))
-            .forEach(usuario => adicionarUsuarioNaLista(usuario));
-    }
-
-    // Evento de submissão do formulário
-    formCadastro.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const nome = document.getElementById('nome').value;
-        const email = document.getElementById('email').value;
-        const data = new Date().toLocaleString();
-        const usuario = { nome, email, data };
-        salvarUsuario(usuario);
-        adicionarUsuarioNaLista(usuario);
-        limparCampos();
+    // Event Listeners
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log('Formulário submetido');
+        
+        const nome = inputNome.value.trim();
+        const email = inputEmail.value.trim();
+        
+        if (!nome || !email) {
+            alert('Por favor, preencha todos os campos!');
+            return;
+        }
+        
+        adicionarUsuario(nome, email);
+        form.reset();
     });
 
-    // Evento de clique no botão de limpar campos
-    limparCamposBtn.addEventListener('click', limparCampos);
+    btnLimparCampos.addEventListener('click', () => {
+        inputNome.value = '';
+        inputEmail.value = '';
+    });
 
-    // Evento de clique no botão de limpar lista
-    limparListaBtn.addEventListener('click', limparLista);
+    btnLimparLista.addEventListener('click', () => {
+        if (confirm('Tem certeza que deseja limpar toda a lista?')) {
+            localStorage.removeItem('usuarios');
+            carregarUsuarios();
+        }
+    });
 
-    // Evento de input no campo de pesquisa
-    pesquisa.addEventListener('input', pesquisarUsuarios);
+    inputPesquisa.addEventListener('input', (e) => {
+        const termo = e.target.value.toLowerCase();
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        const usuariosFiltrados = usuarios.filter(usuario => 
+            usuario.nome.toLowerCase().includes(termo) ||
+            usuario.email.toLowerCase().includes(termo)
+        );
+        atualizarListaUsuarios(usuariosFiltrados);
+    });
 
     // Carregar usuários ao iniciar
     carregarUsuarios();
