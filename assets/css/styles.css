@@ -4,6 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
+    border-collapse: collapse;
 }
 
 /* Define a altura do container para ocupar toda a tela */
@@ -20,11 +22,18 @@ html, body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 /* Main content com flex-grow para expandir quando houver conteúdo */
 .main-content {
-    flex-grow: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background-color: #F0F0F0;
 }
 
 /* Estilo do footer*/
@@ -32,13 +41,16 @@ footer {
     background-color: #5D3F6B;
     color: white;
     padding: 1rem 0;
-    margin: 0;
+    width: 100%;
     text-align: center;
+    margin-top: auto;
 }
-.curriculo{
+
+.curriculo {
     align-items: center;
     display: flex;
     justify-content: center;
+    margin-top: 0.5rem;
 }
 
 /* Cores e fontes */
@@ -49,6 +61,7 @@ body {
     background-color: #F0F0F0;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
 
 header {
@@ -78,9 +91,29 @@ nav a {
 }
 
 .cursos {
-    display: flex;
-    justify-content: space-around;
+    max-width: 1000px;
+    margin: 2rem auto;
     padding: 2rem;
+    background-color: #FFFFFF;
+    border: 1px solid #BDC3C7;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cursos h2 {
+    color: #5D3F6B;
+    text-align: center;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.cursos > p {
+    text-align: center;
+    color: #666666;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .curso-item {
@@ -152,8 +185,12 @@ nav a {
     background-color: #5D3F6B;
     color: #fff;
     padding: 4rem 2rem;
-    margin-bottom: 0;
+    margin: 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: none;
 }
 
 .cta h2 {
@@ -322,6 +359,7 @@ nav a {
     border: 1px solid #BDC3C7;
     border-radius: 8px;
     text-align: center;
+    flex: 1;
 }
 
 .cadastro h2 {
@@ -539,4 +577,10 @@ nav a {
 
 .btn-excluir:hover {
     background-color: #c82333;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
